@@ -1,12 +1,7 @@
-# You'll need to require these if you
-# want to develop while running with ruby.
-# The config/rackup.ru requires these as well
-# for it's own reasons.
-#
-# $ ruby heroku-sinatra-app.rb
-#
 require 'rubygems'
+require 'compass'
 require 'sinatra'
+require 'haml'
 
 configure :production do
   # Configure stuff here you'll want to
@@ -16,12 +11,23 @@ configure :production do
   #       from ENV['DATABASE_URI'] (see /env route below)
 end
 
+# configure compass
+Compass.configuration do |config|
+  config.project_path = File.dirname(__FILE__)
+  config.sass_dir = File.join(Sinatra::Application.views, 'stylesheets')
+  config.output_style = :compact
+end
+
+# at a minimum, the main sass file must reside within the ./views directory. here, we create a ./views/stylesheets directory where all of the sass files can safely reside.
+get '/stylesheets/:name.css' do
+  content_type 'text/css', :charset => 'utf-8'
+  sass :"stylesheets/#{params[:name]}", Compass.sass_engine_options
+end
+
 # Quick test
 get '/' do
   haml :index
 end
-
-# Test at <appname>.heroku.com
 
 # You can see all your app specific information this way.
 # IMPORTANT! This is a very bad thing to do for a production

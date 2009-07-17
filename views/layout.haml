@@ -1,9 +1,16 @@
-!!!
+!!! 
 %html
   %head
-    %title My App
-    %meta{"http-equiv"=>"content-type", "content"=>"text/html", "charset"=>"utf-8"}
-
+    %title Crazy Judah
+    %meta(http-equiv="content-type" content="text/html" charset="utf-8")
+    %meta(http-equiv="Content-Language" content="en")
+    %link(href="/stylesheets/screen.css" media="screen" rel="stylesheet" type="text/css")
   %body
-    #content
-      = yield
+    .container
+      .header
+        %h1 Crazy Judah
+      .body
+        %h2 Super crazy
+        = yield
+      .footer
+        %p trains
