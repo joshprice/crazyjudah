@@ -1,4 +1,4 @@
-require 'heroku-sinatra-app'
+require 'crazyjudah'
 
 ## There is no need to set directories here anymore;
 ## Just run the application
