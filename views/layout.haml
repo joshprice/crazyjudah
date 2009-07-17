@@ -5,12 +5,16 @@
     %meta(http-equiv="content-type" content="text/html" charset="utf-8")
     %meta(http-equiv="Content-Language" content="en")
     %link(href="/stylesheets/screen.css" media="screen" rel="stylesheet" type="text/css")
+    -#%script(src="/javascript/jquery-1.3.2.min.js" type="text/javascript")
   %body
     .container
       .header
-        %h1 Crazy Judah
+        %h1
+          %div Crazy Judah
+          %img(src="/images/logo.png")
+          
       .body
-        %h2 Super crazy
         = yield
+        
       .footer
-        %p trains
+        %img(src="/images/footer.png")
