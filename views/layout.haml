@@ -17,8 +17,11 @@
           border: 1px solid #111
         .header
           text-align: center
-        .body
-          text-align: center
+        .parchment
+          min-height: 365px
+          background: url('/images/parchment.png') top center no-repeat
+        .parch-box
+          padding-top: 2em
         .footer
           text-align: center
       
@@ -27,9 +30,10 @@
       .header
         %h1
           %div Crazy Judah
-          %img(src="/images/logo.png")
+          %a(href="/")
+            %img(src="/images/logo.png")
           
-      .body
+      .body.parchment
         = yield
         
       .footer

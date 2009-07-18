@@ -24,9 +24,12 @@ get '/stylesheets/:name.css' do
   sass :"stylesheets/#{params[:name]}", Compass.sass_engine_options
 end
 
-# Quick test
 get '/' do
   haml :index
+end
+
+get '/songs' do
+  haml :songs
 end
 
 # You can see all your app specific information this way.
