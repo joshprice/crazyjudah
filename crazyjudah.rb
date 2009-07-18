@@ -40,6 +40,17 @@ get '/band' do
   haml :band
 end
 
+get '/sitemap.xml' do
+  content_type 'application/xml'
+  haml :sitemap, :layout => false
+end
+
+not_found do
+  content_type 'text/html'
+  haml :index
+end
+
+
 # You can see all your app specific information this way.
 # IMPORTANT! This is a very bad thing to do for a production
 # application with sensitive information
