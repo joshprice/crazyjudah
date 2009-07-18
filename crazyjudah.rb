@@ -32,6 +32,14 @@ get '/songs' do
   haml :songs
 end
 
+get '/setlist' do
+  haml :setlist
+end
+
+get '/band' do
+  haml :band
+end
+
 # You can see all your app specific information this way.
 # IMPORTANT! This is a very bad thing to do for a production
 # application with sensitive information
