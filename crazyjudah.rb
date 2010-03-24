@@ -28,8 +28,8 @@ get '/' do
   haml :index
 end
 
-get '/demos' do
-  haml :demos
+get '/videos' do
+  haml :videos
 end
 
 get '/setlist' do
