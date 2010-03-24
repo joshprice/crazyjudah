@@ -3,7 +3,7 @@
     %h3 Live performances
     %p
       This is a small selection of YouTube videos capturing Crazy Judah's live performances.
-    %ul
+    %ul.video_links
       %li
         %a(href="http://www.youtube.com/watch?v=3uIdVWTzxPc")
           %span.loud STONE TEMPLE PILOTS
@@ -27,8 +27,35 @@
       for pubs and clubs, corporate functions, open air events and themed parties.
     
   .span-8.append-1.last
-    %object(width="320" height="192")
-      %param(name="movie" value="http://www.youtube.com/v/L6SpVi3qp9w&hl=en_US&fs=1&")
-      %param(name="allowFullScreen" value="true")
-      %param(name="allowscriptaccess" value="always")
-      %embed(src="http://www.youtube.com/v/L6SpVi3qp9w&hl=en_US&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="320" height="192")
+    .embedded_videos
+      %object(width="350" height="210")
+        %param(name="movie" value="http://www.youtube.com/v/3uIdVWTzxPc&hl=en_US&fs=1&")
+        %param(name="allowFullScreen" value="true")
+        %param(name="allowscriptaccess" value="always")
+        %embed(src="http://www.youtube.com/v/3uIdVWTzxPc&hl=en_US&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="350" height="210")
+      %object(width="350" height="210" style="display:none")
+        %param(name="movie" value="http://www.youtube.com/v/L6SpVi3qp9w&hl=en_US&fs=1&")
+        %param(name="allowFullScreen" value="true")
+        %param(name="allowscriptaccess" value="always")
+        %embed(src="http://www.youtube.com/v/L6SpVi3qp9w&hl=en_US&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="350" height="210")
+      %object(width="350" height="210" style="display:none")
+        %param(name="movie" value="http://www.youtube.com/v/ndnVkZVGG6Q&hl=en_US&fs=1&")
+        %param(name="allowFullScreen" value="true")
+        %param(name="allowscriptaccess" value="always")
+        %embed(src="http://www.youtube.com/v/ndnVkZVGG6Q&hl=en_US&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="350" height="210")
+      %object(width="350" height="210" style="display:none")
+        %param(name="movie" value="http://www.youtube.com/v/AF-jBEArLgQ&hl=en_US&fs=1&")
+        %param(name="allowFullScreen" value="true")
+        %param(name="allowscriptaccess" value="always")
+        %embed(src="http://www.youtube.com/v/AF-jBEArLgQ&hl=en_US&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="350" height="210")
+    
+:javascript
+  $(function() {
+    $('ul.video_links li a').each(function(i,e) {
+      $(e).click(function() {
+        $('.embedded_videos object:visible').hide();
+        $('.embedded_videos object:eq('+ i +')').show();
+        return false;
+      });
+    });
+  });
